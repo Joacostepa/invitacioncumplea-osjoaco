@@ -143,6 +143,14 @@
             z-index: 50; /* Alto z-index para estar sobre todo */
         }
 
+        /* Padding para desktop */
+        @media (min-width: 769px) {
+            .hero-background {
+                padding-top: 4rem !important;
+                padding-bottom: 4rem !important;
+            }
+        }
+        
         /* Estilos para mobile y tablet/desktop */
         @media (min-width: 1024px) {
             .desktop-grid {
@@ -154,7 +162,7 @@
 </head>
 <body class="antialiased text-gray-800" style="background-color: #000;">
 
-    <!-- HERO PRINCIPAL (CON IMAGEN DE FONDO) --><section class="hero-background text-white px-4 text-center shadow-2xl" style="padding-top: 4rem; padding-bottom: 4rem;">
+    <!-- HERO PRINCIPAL (CON IMAGEN DE FONDO) --><section class="hero-background text-white px-4 text-center shadow-2xl">
         <div class="max-w-4xl mx-auto">
             <h1 class="text-5xl md:text-7xl font-black mb-4 leading-tight tracking-tight accent-color">
                 VENITE A MIS 34 🔥
