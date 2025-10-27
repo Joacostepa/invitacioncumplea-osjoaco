@@ -334,12 +334,27 @@
             const chusmaModal = document.getElementById('chusmaModal');
             const closeModalButton = document.getElementById('closeModalButton');
 
-            // Forzar scroll al inicio de la página
-            window.scrollTo(0, 0);
+            // Forzar scroll al inicio de la página inmediatamente
+            setTimeout(() => {
+                window.scrollTo(0, 0);
+                document.documentElement.scrollTop = 0;
+            }, 0);
 
             // --- CONFIGURACIÓN CLAVE (¡EDITAR!) ---
             const confirmationDeadline = new Date("2025-11-01T23:59:00"); 
             // --- FIN DE CONFIGURACIÓN ---
+            
+            // Agregar listener para el botón de confirmar asistencia
+            const confirmButton = document.querySelector('a[href="#rsvpSection"]');
+            if (confirmButton) {
+                confirmButton.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const targetSection = document.getElementById('rsvpSection');
+                    if (targetSection) {
+                        targetSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }
+                });
+            }
 
             // 1. Inicializar Firebase
             if (firebaseConfig) {
