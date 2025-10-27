@@ -112,6 +112,19 @@
             z-index: 50; /* Alto z-index para estar sobre todo */
         }
 
+        /* Animación de flecha para indicar scroll */
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+        
+        .scroll-indicator {
+            animation: bounce 2s infinite;
+            font-size: 2rem;
+            opacity: 0.8;
+            margin-top: 2rem;
+        }
+        
         /* Padding para desktop */
         @media (min-width: 769px) {
             .hero-background {
@@ -155,6 +168,11 @@
                 <a href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=VENITE+A+MIS+34&dates=20251120T223000Z/20251121T030000Z&details=Cumplea%C3%B1os+de+34+a%C3%B1os&location=PEDRO+MORAN+2424,+CABA" target="_blank" class="inline-block bg-blue-600 text-white font-bold py-3 px-8 rounded-full text-lg shadow-xl hover:shadow-2xl hover:scale-[1.02] transition duration-300 ease-in-out transform">
                     📅 Agendar en Calendar
                 </a>
+            </div>
+            
+            <!-- Indicador de scroll -->
+            <div class="scroll-indicator text-white">
+                ⬇️
             </div>
         </div>
     </section>
