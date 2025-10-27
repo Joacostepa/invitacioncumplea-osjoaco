@@ -30,6 +30,16 @@
             scroll-behavior: smooth;
         }
         
+        /* Prevenir scroll automático al cargar la página */
+        html:not(:has(:target)) {
+            scroll-padding-top: 0;
+        }
+        
+        /* Permitir scroll suave solo para enlaces */
+        :target {
+            scroll-margin-top: 0;
+        }
+        
         body {
             margin: 0 !important;
             padding: 0 !important;
@@ -324,6 +334,8 @@
             const chusmaModal = document.getElementById('chusmaModal');
             const closeModalButton = document.getElementById('closeModalButton');
 
+            // Forzar scroll al inicio de la página
+            window.scrollTo(0, 0);
 
             // --- CONFIGURACIÓN CLAVE (¡EDITAR!) ---
             const confirmationDeadline = new Date("2025-11-01T23:59:00"); 
