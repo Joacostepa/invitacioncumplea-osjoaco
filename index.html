@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VENITE A MIS 34 🎉</title>
+    
+    <!-- Carga de Tailwind CSS --><script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Define la fuente Inter y el estilo general */
+        body {
+            font-family: 'Inter', sans-serif;
+            transition: background-color 0.3s;
+        }
+        /* Resetear márgenes y paddings globales */
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        html, body {
+            margin: 0 !important;
+            padding: 0 !important;
+            width: 100%;
+            overflow-x: hidden;
+        }
+        
+        /* Estilos personalizados para el hero con imagen de fondo */
+        .hero-background {
+            background-image: url('Fondo.png'); /* Imagen para desktop */
+            background-size: cover; /* Asegura que la imagen cubra todo el fondo */
+            background-position: center; /* Centra la imagen */
+            background-repeat: no-repeat; /* Evita que se repita */
+            background-attachment: scroll; /* La imagen se mueve con el scroll */
+            position: relative;
+            z-index: 0;
+            min-height: 600px; /* Altura mínima para que se vea bien */
+            margin: 0 !important;
+            padding: 0 !important;
+        }
+        /* Overlay oscuro para mejorar la legibilidad del texto sobre la imagen */
+        .hero-background::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.45); /* Capa oscura semi-transparente */
+            z-index: -1;
+        }
+        
+        /* Ajustes para móviles */
+        @media (max-width: 768px) {
+            body {
+                margin: 0 !important;
+                padding: 0 !important;
+                background-color: #000 !important;
+                overflow-x: hidden;
+            }
+            
+            html {
+                margin: 0 !important;
+                padding: 0 !important;
+                background-color: #000 !important;
+                overflow-x: hidden;
+            }
+            
+            section {
+                margin: 0 !important;
+                padding: 0 !important;
+            }
+            
+            .hero-background {
+                background-image: url('Fondo Celulares.png') !important;
+                background-size: cover !important;
+                background-position: center center !important;
+                background-repeat: no-repeat !important;
+                height: 100vh !important;
+                height: -webkit-fill-available !important;
+                width: 100vw !important;
+                padding: 0 !important;
+                margin: 0 !important;
+                position: relative !important;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+            
+            .hero-background > div {
+                padding: 20px 16px !important;
+                max-width: 100% !important;
+                position: relative;
+                z-index: 1;
+            }
+            
+            /* Eliminar padding superior e inferior en móviles */
+            section.hero-background {
+                padding-top: 0 !important;
+                padding-bottom: 0 !important;
+            }
+        }
+        
+        /* Ajuste extra para pantallas muy pequeñas */
+        @media (max-width: 480px) {
+            .hero-background {
+                min-height: 100vh;
+                min-height: -webkit-fill-available;
+            }
+        }
+
+        /* Color de acento dorado/champagne */
+        .accent-color {
+            color: #FFD700; /* Oro */
+        }
+        .bg-accent-color {
+            background-color: #FFD700;
+        }
+        .bg-accent-color:hover {
+            background-color: #E6C200; 
+        }
+        /* Estilo para el overlay de formulario deshabilitado */
+        .form-disabled-overlay {
+            background-color: rgba(220, 220, 220, 0.85); /* Gris claro semi-transparente */
+            backdrop-filter: blur(2px);
+            z-index: 10;
+        }
+        /* Animación sutil de los números del contador */
+        .countdown-number {
+            transition: all 0.3s ease-in-out;
+        }
+        /* Estilo para el modal de "Chusma" */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 50; /* Alto z-index para estar sobre todo */
+        }
+
+        /* Estilos para mobile y tablet/desktop */
+        @media (min-width: 1024px) {
+            .desktop-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+    </style>
+</head>
+<body class="antialiased text-gray-800" style="background-color: #000;">
+
+    <!-- HERO PRINCIPAL (CON IMAGEN DE FONDO) --><section class="hero-background text-white px-4 text-center shadow-2xl" style="padding-top: 4rem; padding-bottom: 4rem;">
+        <div class="max-w-4xl mx-auto">
+            <h1 class="text-5xl md:text-7xl font-black mb-4 leading-tight tracking-tight accent-color">
+                VENITE A MIS 34 🔥
+            </h1>
+            <!-- Subtítulo removido a petición del usuario --><!-- Bloque de Información del Evento --><div class="bg-gray-800 bg-opacity-80 text-white p-6 md:p-8 rounded-2xl shadow-xl inline-block text-left max-w-sm md:max-w-md mx-auto border border-yellow-700/50 mt-8">
+                <p class="text-lg md:text-xl font-semibold mb-3">
+                    🗓️ <span class="accent-color">Fecha:</span> JUEVES 20 DE NOVIEMBRE 19:30 HS.
+                </p>
+                <p class="text-lg md:text-xl font-semibold mb-3">
+                    📍 <span class="accent-color">Lugar:</span> PEDRO MORAN 2424, CABA
+                </p>
+                <p class="text-lg md:text-xl font-semibold">
+                    👗 <span class="accent-color">Dress code:</span> LO QUE TE PINTE.
+                </p>
+            </div>
+
+            <div class="flex flex-col sm:flex-row gap-4 justify-center mt-10">
+                <a href="#rsvpSection" class="inline-block bg-accent-color text-gray-900 font-bold py-3 px-8 rounded-full text-lg shadow-xl hover:shadow-2xl hover:scale-[1.02] transition duration-300 ease-in-out transform">
+                    Confirmar asistencia ahora
+                </a>
+                <a href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=VENITE+A+MIS+34&dates=20251120T223000Z/20251121T030000Z&details=Cumplea%C3%B1os+de+34+a%C3%B1os&location=PEDRO+MORAN+2424,+CABA" target="_blank" class="inline-block bg-blue-600 text-white font-bold py-3 px-8 rounded-full text-lg shadow-xl hover:shadow-2xl hover:scale-[1.02] transition duration-300 ease-in-out transform">
+                    📅 Agendar en Calendar
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTADOR REGRESIVO --><section class="py-12 px-4 bg-white shadow-inner">
+        <div class="max-w-xl mx-auto text-center bg-gray-50 p-6 rounded-2xl shadow-lg border border-gray-200">
+            <p id="deadlineMessage" class="text-lg md:text-xl mb-6 font-semibold text-gray-700">
+                Tenés tiempo de confirmar hasta: <span class="accent-color font-black">SÁBADO 1 DE NOVIEMBRE DEL 2025</span>
+            </p>
+            <div id="countdown" class="flex justify-center items-center space-x-3 md:space-x-6 text-gray-900">
+                <!-- Los números se llenan con JS --></div>
+            <p class="text-sm text-gray-500 mt-4">
+                Después cierro el número final con el catering 🙏
+            </p>
+        </div>
+    </section>
+
+    <!-- FORMULARIO DE CONFIRMACIÓN --><section id="rsvpSection" class="py-16 px-4 bg-gray-100">
+        <div class="max-w-3xl mx-auto bg-white p-8 rounded-2xl shadow-2xl relative overflow-hidden">
+            <h2 class="text-3xl font-bold text-center mb-8 text-gray-900">Confirmame tu lugar 📝</h2>
+
+            <form id="rsvpForm" class="space-y-6">
+                <div>
+                    <label for="fullName" class="block text-sm font-medium text-gray-700 mb-2">Nombre y Apellido *</label>
+                    <input type="text" id="fullName" name="fullName" required
+                           class="w-full p-3 border border-gray-300 rounded-xl focus:ring-4 focus:ring-yellow-200 focus:border-accent-color transition duration-200 shadow-sm">
+                </div>
+
+                <div>
+                    <label for="attendance" class="block text-sm font-medium text-gray-700 mb-2">¿Venís? *</label>
+                    <select id="attendance" name="attendance" required
+                            class="w-full p-3 border border-gray-300 rounded-xl focus:ring-4 focus:ring-yellow-200 focus:border-accent-color transition duration-200 bg-white shadow-sm">
+                        <option value="">-- Seleccioná una opción --</option>
+                        <option value="si">Sí voy</option>
+                        <option value="no">No puedo que pena</option>
+                    </select>
+                </div>
+
+                <!-- Nuevo selector de comida vegetariana --><div>
+                    <label for="vegetarian" class="block text-sm font-medium text-gray-700 mb-2">Opción Vegetariana 🥬</label>
+                    <select id="vegetarian" name="vegetarian"
+                            class="w-full p-3 border border-gray-300 rounded-xl focus:ring-4 focus:ring-yellow-200 focus:border-accent-color transition duration-200 bg-white shadow-sm">
+                        <option value="no" selected>No, gracias (Opción por defecto)</option>
+                        <option value="si">Sí, prefiero comida vegetariana</option>
+                    </select>
+                </div>
+
+                <div>
+                    <label for="message" class="block text-sm font-medium text-gray-700 mb-2">Mensaje opcional</label>
+                    <textarea id="message" name="message" rows="3"
+                              class="w-full p-3 border border-gray-300 rounded-xl focus:ring-4 focus:ring-yellow-200 focus:border-accent-color transition duration-200 shadow-sm"
+                              placeholder="Acá escribí lo que quieras"></textarea>
+                </div>
+
+                <button type="submit"
+                        class="w-full bg-accent-color text-gray-900 font-bold py-3 px-6 rounded-full text-lg shadow-md hover:shadow-xl transition duration-300 ease-in-out transform hover:scale-[1.01] disabled:opacity-50 disabled:cursor-not-allowed">
+                    ENVIAR CONFIRMACIÓN
+                </button>
+            </form>
+
+            <!-- Mensaje de confirmación exitosa --><div id="rsvpThanksMessage" class="hidden text-center mt-6 p-6 bg-green-50 rounded-xl border border-green-300">
+                <p class="text-2xl font-bold text-green-700">¡Listo! Gracias por confirmar ❤️</p>
+                <p class="text-green-600 mt-2">¡Te veo pronto!</p>
+            </div>
+
+            <!-- OVERLAY DE FORMULARIO DESHABILITADO --><div id="formDisabledOverlay" class="absolute inset-0 flex items-center justify-center p-8 rounded-2xl hidden form-disabled-overlay">
+                <div class="text-center text-gray-900 p-8 bg-white rounded-2xl shadow-2xl border-2 border-red-400 transform scale-105">
+                    <p class="text-2xl font-black mb-3 text-red-600">Cierre de confirmaciones ⛔</p>
+                    <p class="text-lg font-medium">
+                        Ya pasé el número final al catering.
+                    </p>
+                    <p class="text-base mt-2">
+                        Si necesitás hablarme urgente, por favor, escribime por WhatsApp. ¡Gracias!
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- BLOQUE FINAL INFO PRÁCTICA --><section class="py-12 px-4 bg-gray-50">
+        <div class="max-w-3xl mx-auto bg-white p-8 rounded-2xl shadow-lg border-t-4 border-accent-color">
+            <h2 class="text-3xl font-bold text-center mb-8 text-gray-900">Detalles clave 💡</h2>
+
+            <div class="space-y-8">
+                <!-- Ubicación y cómo llegar modificado --><div>
+                    <h3 class="text-xl font-black accent-color mb-2">Ubicación y cómo llegar 📍</h3>
+                    <p class="text-gray-700 mb-4">
+                        El lugar queda en PEDRO MORAN 2424, CABA.
+                    </p>
+                    <!-- Botón de cómo llegar --><a href="https://maps.google.com/?q=PEDRO+MORAN+2424,+CABA" target="_blank" class="inline-block bg-gray-800 text-white font-bold py-2 px-4 rounded-full text-sm shadow-md hover:bg-gray-700 transition duration-200">
+                        Abrir en Google Maps 🗺️
+                    </a>
+                </div>
+
+                <!-- Nota sobre regalos modificado --><div>
+                    <h3 class="text-xl font-black accent-color mb-2">Nota sobre regalos 🎁</h3>
+                    <p class="text-gray-700">
+                        No hace falta que traigas nada, tu presencia es la mejor. Ahora, si insistís con regalar, te dejo el CBU de la caja de ahorro en USD que me van a venir bien para un viajecito al caribe o europa.
+                        <br class="my-2">
+                        <span class="font-bold text-gray-900 break-words">CBU: 93280948928409</span> (Ahre que lo dejaba 😉)
+                    </p>
+                </div>
+
+                <!-- Frase de cierre y botón de chusma --><div class="text-center pt-6 border-t border-gray-200">
+                    <p class="text-xl font-black text-gray-800 mb-6">
+                        ¡Te espero! 🎉
+                    </p>
+                    <button id="showGuestsButton" class="bg-blue-500 text-white font-bold py-4 px-10 rounded-full text-lg shadow-xl hover:bg-blue-600 transition duration-300 ease-in-out transform hover:scale-[1.03]">
+                        Ver Invitados 👀
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- MODAL (Overlay) de "CHUSMA" --><div id="chusmaModal" class="modal-overlay hidden">
+        <div class="bg-white p-8 rounded-xl shadow-2xl text-center max-w-sm w-11/12 border-4 border-accent-color transform scale-105">
+            <p class="text-3xl font-black text-gray-900 mb-4">
+                JAJAJ que te importaaa quien vieene!
+            </p>
+            <button id="closeModalButton" class="bg-accent-color text-gray-900 font-bold py-2 px-6 rounded-full mt-4 hover:bg-yellow-400 transition duration-200">
+                Cerrar
+            </button>
+        </div>
+    </div>
+
+    <!-- LÓGICA JAVASCRIPT VANILLA Y FIREBASE --><script type="module">
+        // Importar las funciones de Firebase SDK
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-app.js";
+        import { getAuth, signInAnonymously, signInWithCustomToken } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-auth.js";
+        import { getFirestore, collection, addDoc, serverTimestamp } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
+        import { setLogLevel } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
+        
+        // Configuración y variables globales del entorno Canvas
+        const appId = typeof __app_id !== 'undefined' ? __app_id : 'default-app-id';
+        const firebaseConfig = typeof __firebase_config !== 'undefined' ? JSON.parse(__firebase_config) : null;
+        const initialAuthToken = typeof __initial_auth_token !== 'undefined' ? __initial_auth_token : null;
+
+        let db, auth;
+        let isAuthReady = false;
+
+        document.addEventListener('DOMContentLoaded', async () => {
+            const countdownElement = document.getElementById('countdown');
+            const rsvpForm = document.getElementById('rsvpForm');
+            const formDisabledOverlay = document.getElementById('formDisabledOverlay');
+            const rsvpThanksMessage = document.getElementById('rsvpThanksMessage');
+            const showGuestsButton = document.getElementById('showGuestsButton');
+            const chusmaModal = document.getElementById('chusmaModal');
+            const closeModalButton = document.getElementById('closeModalButton');
+
+
+            // --- CONFIGURACIÓN CLAVE (¡EDITAR!) ---
+            const confirmationDeadline = new Date("2025-11-01T23:59:00"); 
+            // --- FIN DE CONFIGURACIÓN ---
+
+            // 1. Inicializar Firebase
+            if (firebaseConfig) {
+                try {
+                    const app = initializeApp(firebaseConfig);
+                    db = getFirestore(app);
+                    auth = getAuth(app);
+                    setLogLevel('debug'); 
+                    
+                    // 2. Autenticación
+                    if (initialAuthToken) {
+                        await signInWithCustomToken(auth, initialAuthToken);
+                        console.log("Firebase: Autenticación exitosa con token personalizado.");
+                    } else {
+                        await signInAnonymously(auth);
+                        console.log("Firebase: Autenticación anónima exitosa.");
+                    }
+                    isAuthReady = true;
+
+                } catch (error) {
+                    console.error("Firebase Error: No se pudo conectar a la base de datos.", error);
+                    // Si falla Firebase, deshabilitar el formulario para evitar intentos fallidos de guardado.
+                    disableForm(); 
+                }
+            } else {
+                console.error("Firebase config no disponible. El formulario NO guardará datos de forma persistente.");
+                isAuthReady = false;
+            }
+
+            // --- Funciones de Lógica de UI (Contador y Formulario) ---
+            function formatTime(value) {
+                return String(value).padStart(2, '0');
+            }
+
+            function updateCountdown() {
+                const now = new Date().getTime();
+                const distance = confirmationDeadline - now;
+
+                const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+                if (distance < 0) {
+                    clearInterval(countdownInterval);
+                    countdownElement.innerHTML = `<span class="text-2xl font-black text-red-600">¡EL TIEMPO EXPIRÓ!</span>`;
+                    disableForm();
+                } else {
+                    countdownElement.innerHTML = `
+                        <!-- Bloques del contador --><div class="flex flex-col items-center">
+                            <span class="countdown-number text-5xl md:text-6xl font-extrabold text-gray-900">${formatTime(days)}</span>
+                            <span class="text-sm uppercase font-semibold text-gray-600 mt-1">Días</span>
+                        </div>
+                        <span class="text-4xl md:text-5xl font-extrabold accent-color">:</span>
+                        <div class="flex flex-col items-center">
+                            <span class="countdown-number text-5xl md:text-6xl font-extrabold text-gray-900">${formatTime(hours)}</span>
+                            <span class="text-sm uppercase font-semibold text-gray-600 mt-1">Horas</span>
+                        </div>
+                        <span class="text-4xl md:text-5xl font-extrabold accent-color">:</span>
+                        <div class="flex flex-col items-center">
+                            <span class="countdown-number text-5xl md:text-6xl font-extrabold text-gray-900">${formatTime(minutes)}</span>
+                            <span class="text-sm uppercase font-semibold text-gray-600 mt-1">Minutos</span>
+                        </div>
+                        <span class="text-4xl md:text-5xl font-extrabold accent-color">:</span>
+                        <div class="flex flex-col items-center">
+                            <span class="countdown-number text-5xl md:text-6xl font-extrabold text-gray-900">${formatTime(seconds)}</span>
+                            <span class="text-sm uppercase font-semibold text-gray-600 mt-1">Segundos</span>
+                        </div>
+                    `;
+                }
+            }
+
+            function disableForm() {
+                rsvpForm.querySelectorAll('input, select, textarea, button').forEach(element => {
+                    element.setAttribute('disabled', 'true');
+                    element.classList.add('opacity-40', 'cursor-not-allowed');
+                });
+                formDisabledOverlay.classList.remove('hidden');
+            }
+
+            // Iniciar y verificar el estado
+            updateCountdown();
+            const countdownInterval = setInterval(updateCountdown, 1000);
+
+            // Listener para el envío del formulario
+            rsvpForm.addEventListener('submit', async function(event) {
+                event.preventDefault(); 
+
+                const fullName = document.getElementById('fullName').value;
+                const attendance = document.getElementById('attendance').value;
+                const vegetarian = document.getElementById('vegetarian').value;
+                const message = document.getElementById('message').value;
+
+                if (!fullName || !attendance || attendance === '') {
+                    console.error('Faltan campos obligatorios.'); 
+                    // Se podría agregar un mensaje visible de error aquí.
+                    return;
+                }
+
+                // 3. Lógica de guardado en Firestore
+                if (isAuthReady) {
+                    try {
+                        const userId = auth.currentUser ? auth.currentUser.uid : 'anonymous';
+                        const docRef = await addDoc(collection(db, `artifacts/${appId}/users/${userId}/rsvps`), {
+                            nombre: fullName,
+                            asistencia: attendance,
+                            vegetariano: vegetarian,
+                            mensaje_opcional: message,
+                            fechaConfirmacion: serverTimestamp() 
+                        });
+                        console.log("RSVP guardado en Firestore con ID:", docRef.id);
+                    } catch (e) {
+                        console.error("Error guardando RSVP en Firestore: ", e);
+                        // Mostrar mensaje de error al usuario si el guardado falla
+                    }
+                } else {
+                    // Si Firebase no está listo, solo hacemos console.log como fallback.
+                    console.log('--- FALLBACK: DATOS NO GUARDADOS PERSISTENTEMENTE (Firebase no listo) ---');
+                    console.log({ nombre: fullName, asistencia: attendance, vegetariano: vegetarian, mensaje_opcional: message });
+                }
+
+                // 4. Guardar en Google Sheets usando una imagen (método más simple)
+                try {
+                    const GOOGLE_APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbyB_nKwOb4pR0ccgrOeZxzyJOjCUKdHdZSoxDgO6_Ju8Dzbn0tOjFt2MlzCErAAPEYL/exec';
+                    
+                    // Enviar datos usando GET
+                    const datos = {
+                        nombre: fullName,
+                        asistencia: attendance,
+                        vegetariano: vegetarian,
+                        mensaje: message || '',
+                        fecha: new Date().toLocaleString('es-AR')
+                    };
+                    
+                    // Construir URL con parámetros
+                    const params = new URLSearchParams(datos);
+                    const urlCompleta = GOOGLE_APPS_SCRIPT_URL + '?' + params.toString();
+                    
+                    // Crear una imagen invisible para hacer la petición GET
+                    const img = new Image();
+                    img.style.display = 'none';
+                    img.onload = function() {
+                        console.log('Datos enviados a Google Sheets exitosamente');
+                        document.body.removeChild(img);
+                    };
+                    img.onerror = function() {
+                        console.error('Error al enviar datos a Google Sheets');
+                        document.body.removeChild(img);
+                    };
+                    img.src = urlCompleta;
+                    document.body.appendChild(img);
+                    
+                    console.log('Intentando enviar datos a Google Sheets:', datos);
+                } catch (error) {
+                    console.error('Error enviando datos a Google Sheets:', error);
+                }
+
+                // Mostrar mensaje de éxito (independientemente de si el guardado persistente falló o no)
+                rsvpForm.classList.add('hidden');
+                rsvpThanksMessage.classList.remove('hidden');
+            });
+
+            // Lógica del botón de "Ver Invitados" (Chusma)
+            showGuestsButton.addEventListener('click', () => {
+                chusmaModal.classList.remove('hidden');
+            });
+
+            // Lógica para cerrar el modal
+            closeModalButton.addEventListener('click', () => {
+                chusmaModal.classList.add('hidden');
+            });
+
+            // Cerrar el modal al hacer click fuera
+            chusmaModal.addEventListener('click', (e) => {
+                if (e.target === chusmaModal) {
+                    chusmaModal.classList.add('hidden');
+                }
+            });
+
+        });
+    </script>
+</body>
+</html>
